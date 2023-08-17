@@ -3,6 +3,7 @@
 Prebuilt MIUI Leica Camera to include in custom ROM builds.
 
 ### Supported devices
+* POCO F3/Redmi K40/Mi 11X (alioth)
 * POCO F4/Redmi K40S (munch)
 * POCO X3 Pro (vayu)
 * Xiaomi 11 Lite NE (lisa)
