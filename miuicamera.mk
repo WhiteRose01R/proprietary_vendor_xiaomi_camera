@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2023-2024 The LineageOS Project
+#           (C) 2024 Paranoid Android
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -28,6 +29,10 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
     ro.product.mod_device=_global \
     vendor.camera.aux.packagelist=com.android.camera
 
-# Soong
+# Sepolicy
+BOARD_VENDOR_SEPOLICY_DIRS += \
+    vendor/xiaomi/camera/sepolicy/vendor
+
+# Soong namespace
 PRODUCT_SOONG_NAMESPACES += \
-    vendor/xiaomi/miuicamera
+    vendor/xiaomi/camera

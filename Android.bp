@@ -1,5 +1,6 @@
 //
 // Copyright (C) 2023-2024 The LineageOS Project
+//           (C) 2024 Paranoid Android
 //
 // SPDX-License-Identifier: Apache-2.0
 //
@@ -20,6 +21,7 @@ android_app_import {
     privileged: true,
     system_ext_specific: true,
     required: [
+        "libcamera_algoup_jni.xiaomi",
         "privapp-permissions-miuicamera.xml",
     ],
 }
@@ -30,6 +32,28 @@ android_app_import {
     certificate: "media",
     system_ext_specific: true,
     uses_libs: ["org.apache.http.legacy"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libcamera_algoup_jni.xiaomi",
+    arch: {
+        arm64: {
+            srcs: ["prebuilt/libcamera_algoup_jni.xiaomi.so"],
+        },
+    },
+    compile_multilib: "64",
+    product_specific: true,
+    shared_libs: [
+        "libbinder",
+        "libc++",
+        "libcamera_client",
+        "libcamera_metadata",
+        "libcutils",
+        "libgui",
+        "liblog",
+        "libutils",
+        "libvndksupport",
+    ],
 }
 
 cc_library {
