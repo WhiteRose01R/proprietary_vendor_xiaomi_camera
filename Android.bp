@@ -20,6 +20,9 @@ android_app_import {
     presigned: true,
     privileged: true,
     system_ext_specific: true,
+    dex_preopt: {
+        enabled: false,
+    },
     required: [
         "libcamera_algoup_jni.xiaomi",
         "privapp-permissions-miuicamera.xml",

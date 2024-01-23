@@ -9,9 +9,6 @@
 PRODUCT_PACKAGES += \
     MiuiCamera
 
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    MiuiCamera
-
 ifeq ($(TARGET_CAMERA_EXTRAPHOTO),true)
 PRODUCT_PACKAGES += \
     MiuiExtraPhoto
