@@ -4,7 +4,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter citrus fog lime spes,$(TARGET_DEVICE)),)
+ifneq ($(filter surya,$(TARGET_DEVICE)),)
 
 CAMERA_LIBRARIES := libcamera_algoup_jni.xiaomi.so libcamera_mianode_jni.xiaomi.so
 

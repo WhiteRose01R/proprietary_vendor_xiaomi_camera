@@ -29,7 +29,7 @@ source "${HELPER}"
 setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" true
 
 # Warning headers and guards
-write_headers "citrus fog lime spes"
+write_headers "surya"
 sed -i 's|device/|vendor/|g' "$ANDROIDBP" "$ANDROIDMK" "$BOARDMK" "$PRODUCTMK"
 
 cat << 'EOF' >> "$ANDROIDMK"
