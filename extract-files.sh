@@ -54,13 +54,9 @@ fi
 
 function blob_fixup() {
     case "${1}" in
-        system/lib64/libgui-xiaomi.so)
-            [ "$2" = "" ] && return 0
-            sed -i "s/android.hardware.graphics.common-V4-ndk.so/android.hardware.graphics.common-V6-ndk.so/" "${2}"
-            ;;
         system/lib64/libcamera_algoup_jni.xiaomi.so|system/lib64/libcamera_mianode_jni.xiaomi.so)
             [ "$2" = "" ] && return 0
-            patchelf --replace-needed libgui.so libgui-xiaomi.so "${2}"
+            patchelf --add-needed libgui_shim_miuicamera.so "${2}"
             ;;
         system/priv-app/MiuiCamera/MiuiCamera.apk)
             [ "$2" = "" ] && return 0
