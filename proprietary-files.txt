@@ -7,7 +7,7 @@ system/lib64/libmicampostproc_client.so
 system/lib64/vendor.xiaomi.hardware.campostproc@1.0.so
 
 # LEICA - from itzdfplayer
-system/priv-app/MiuiCamera/MiuiCamera.apk;OVERRIDES=Aperture,Camera,Camera2,GoogleCameraGo;PRESIGNED|e34a24135cdcc415bb51a6a770b644e833390428
+system/priv-app/MiuiCamera/MiuiCamera.apk;OVERRIDES=Aperture,Camera,Camera2,GoogleCameraGo;|e34a24135cdcc415bb51a6a770b644e833390428
 
 # photo - from CRdroid repository
 system/priv-app/MiuiExtraPhoto/MiuiExtraPhoto.apk;PRESIGNED
