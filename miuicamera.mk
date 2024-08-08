@@ -8,7 +8,6 @@ CAMERA_PACKAGE_NAME := com.android.camera
 
 # Overlays
 PRODUCT_PACKAGES += \
-    MiuiCameraOverlayIcon \
     MiuiCameraOverlayLeicaed
 
 # Permissions
