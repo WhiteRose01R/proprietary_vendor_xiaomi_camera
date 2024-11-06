@@ -6,22 +6,6 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/xiaomi/camera
 
 PRODUCT_COPY_FILES += \
-    vendor/xiaomi/camera/proprietary/system/lib64/libmicampostproc_client.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libmicampostproc_client.so \
-    vendor/xiaomi/camera/proprietary/system/lib64/vendor.xiaomi.hardware.campostproc@1.0.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/vendor.xiaomi.hardware.campostproc@1.0.so \
-    vendor/xiaomi/camera/proprietary/system/priv-app/MiuiExtraPhoto/lib/arm64/libdoc_photo.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/MiuiExtraPhoto/lib/arm64/libdoc_photo.so \
-    vendor/xiaomi/camera/proprietary/system/priv-app/MiuiExtraPhoto/lib/arm64/libdoc_photo_c++_shared.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/MiuiExtraPhoto/lib/arm64/libdoc_photo_c++_shared.so \
-    vendor/xiaomi/camera/proprietary/system/priv-app/MiuiExtraPhoto/lib/arm64/libgallery_arcsoft_dualcam_refocus.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/MiuiExtraPhoto/lib/arm64/libgallery_arcsoft_dualcam_refocus.so \
-    vendor/xiaomi/camera/proprietary/system/priv-app/MiuiExtraPhoto/lib/arm64/libgallery_arcsoft_portrait_lighting.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/MiuiExtraPhoto/lib/arm64/libgallery_arcsoft_portrait_lighting.so \
-    vendor/xiaomi/camera/proprietary/system/priv-app/MiuiExtraPhoto/lib/arm64/libgallery_arcsoft_portrait_lighting_c.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/MiuiExtraPhoto/lib/arm64/libgallery_arcsoft_portrait_lighting_c.so \
-    vendor/xiaomi/camera/proprietary/system/priv-app/MiuiExtraPhoto/lib/arm64/libgallery_mpbase.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/MiuiExtraPhoto/lib/arm64/libgallery_mpbase.so \
-    vendor/xiaomi/camera/proprietary/system/priv-app/MiuiExtraPhoto/lib/arm64/libmibokeh_gallery.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/MiuiExtraPhoto/lib/arm64/libmibokeh_gallery.so \
-    vendor/xiaomi/camera/proprietary/system/priv-app/MiuiExtraPhoto/lib/arm64/libmisr.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/MiuiExtraPhoto/lib/arm64/libmisr.so \
-    vendor/xiaomi/camera/proprietary/system/priv-app/MiuiExtraPhoto/lib/arm64/libmotion_photo.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/MiuiExtraPhoto/lib/arm64/libmotion_photo.so \
-    vendor/xiaomi/camera/proprietary/system/priv-app/MiuiExtraPhoto/lib/arm64/libmotion_photo_c++_shared.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/MiuiExtraPhoto/lib/arm64/libmotion_photo_c++_shared.so \
-    vendor/xiaomi/camera/proprietary/system/priv-app/MiuiExtraPhoto/lib/arm64/libmotion_photo_mace.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/MiuiExtraPhoto/lib/arm64/libmotion_photo_mace.so \
-    vendor/xiaomi/camera/proprietary/system/priv-app/MiuiExtraPhoto/lib/arm64/librefocus.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/MiuiExtraPhoto/lib/arm64/librefocus.so \
-    vendor/xiaomi/camera/proprietary/system/priv-app/MiuiExtraPhoto/lib/arm64/librefocus_mibokeh.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/MiuiExtraPhoto/lib/arm64/librefocus_mibokeh.so \
-    vendor/xiaomi/camera/proprietary/system/priv-app/MiuiExtraPhoto/lib/arm64/libselection.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/MiuiExtraPhoto/lib/arm64/libselection.so \
     vendor/xiaomi/camera/proprietary/vendor/etc/camera/102_SummerDay.png:$(TARGET_COPY_OUT_VENDOR)/etc/camera/102_SummerDay.png \
     vendor/xiaomi/camera/proprietary/vendor/etc/camera/103_Fantasy.png:$(TARGET_COPY_OUT_VENDOR)/etc/camera/103_Fantasy.png \
     vendor/xiaomi/camera/proprietary/vendor/etc/camera/104_Meet.png:$(TARGET_COPY_OUT_VENDOR)/etc/camera/104_Meet.png \
@@ -36,7 +20,33 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/camera/proprietary/vendor/etc/camera/113_BlackIce.png:$(TARGET_COPY_OUT_VENDOR)/etc/camera/113_BlackIce.png
 
 PRODUCT_PACKAGES += \
+    libOpenCL_system \
+    libarcsoft_portrait_lighting_system \
+    libarcsoft_portrait_lighting_c_system \
     libcamera_algoup_jni.xiaomi \
     libcamera_mianode_jni.xiaomi \
+    libdoc_photo \
+    libdoc_photo_c++_shared \
+    libgallery_arcsoft_dualcam_refocus \
+    libgallery_arcsoft_portrait_lighting \
+    libgallery_arcsoft_portrait_lighting_c \
+    libgallery_mpbase \
+    libmibokeh_gallery \
+    libmicampostproc_client \
+    libmpbase_system \
+    librefocus \
+    librefocus_mibokeh \
+    vendor.xiaomi.hardware.campostproc@1.0_system \
     MiuiCamera \
     MiuiExtraPhoto
+
+PRODUCT_PACKAGES += \
+    libdoc_photo_libdoc_photo_symlink64 \
+    libdoc_photo_c++_shared_libdoc_photo_c++_shared_symlink64 \
+    libgallery_arcsoft_dualcam_refocus_libgallery_arcsoft_dualcam_refocus_symlink64 \
+    libgallery_arcsoft_portrait_lighting_libgallery_arcsoft_portrait_lighting_symlink64 \
+    libgallery_arcsoft_portrait_lighting_c_libgallery_arcsoft_portrait_lighting_c_symlink64 \
+    libgallery_mpbase_libgallery_mpbase_symlink64 \
+    libmibokeh_gallery_libmibokeh_gallery_symlink64 \
+    librefocus_librefocus_symlink64 \
+    librefocus_mibokeh_librefocus_mibokeh_symlink64

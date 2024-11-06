@@ -1,30 +1,29 @@
-# All SPES MIUI blobs below are extracted from miui_SPESNGlobal_V14.0.6.0.TGKMIXM
+# All SPES MIUI blobs below are extracted from miui_SPESNGlobal_V14.0.8.0.TGKMIXM
 
 # libcamera - from SPES MIUI
--system/lib64/libcamera_algoup_jni.xiaomi.so|9ad626da38dd0aada62019e9af5c1db161f78eea
--system/lib64/libcamera_mianode_jni.xiaomi.so|caecc4f8ee3da405c266b5f566bd3be883b142d8
+system/lib64/libcamera_algoup_jni.xiaomi.so|9ad626da38dd0aada62019e9af5c1db161f78eea
+system/lib64/libcamera_mianode_jni.xiaomi.so|caecc4f8ee3da405c266b5f566bd3be883b142d8
 system/lib64/libmicampostproc_client.so
-system/lib64/vendor.xiaomi.hardware.campostproc@1.0.so
+system/lib64/vendor.xiaomi.hardware.campostproc@1.0.so;MODULE_SUFFIX=_system
+vendor/lib64/libmpbase.so:system/lib64/libmpbase.so;MODULE_SUFFIX=_system
+vendor/lib64/libOpenCL.so:system/lib64/libOpenCL.so;MODULE_SUFFIX=_system
+vendor/lib64/libarcsoft_portrait_lighting.so:system/lib64/libarcsoft_portrait_lighting.so;MODULE_SUFFIX=_system
+vendor/lib64/libarcsoft_portrait_lighting_c.so:system/lib64/libarcsoft_portrait_lighting_c.so;MODULE_SUFFIX=_system
 
 # LEICA - from itzdfplayer
 system/priv-app/MiuiCamera/MiuiCamera.apk;OVERRIDES=Aperture,Camera,Camera2,GoogleCameraGo;|e34a24135cdcc415bb51a6a770b644e833390428
 
 # photo - from CRdroid repository
 system/priv-app/MiuiExtraPhoto/MiuiExtraPhoto.apk
-system/priv-app/MiuiExtraPhoto/lib/arm64/libdoc_photo.so
-system/priv-app/MiuiExtraPhoto/lib/arm64/libdoc_photo_c++_shared.so
-system/priv-app/MiuiExtraPhoto/lib/arm64/libgallery_arcsoft_dualcam_refocus.so
-system/priv-app/MiuiExtraPhoto/lib/arm64/libgallery_arcsoft_portrait_lighting.so
-system/priv-app/MiuiExtraPhoto/lib/arm64/libgallery_arcsoft_portrait_lighting_c.so
-system/priv-app/MiuiExtraPhoto/lib/arm64/libgallery_mpbase.so
-system/priv-app/MiuiExtraPhoto/lib/arm64/libmibokeh_gallery.so
-system/priv-app/MiuiExtraPhoto/lib/arm64/libmisr.so
-system/priv-app/MiuiExtraPhoto/lib/arm64/libmotion_photo.so
-system/priv-app/MiuiExtraPhoto/lib/arm64/libmotion_photo_c++_shared.so
-system/priv-app/MiuiExtraPhoto/lib/arm64/libmotion_photo_mace.so
-system/priv-app/MiuiExtraPhoto/lib/arm64/librefocus.so
-system/priv-app/MiuiExtraPhoto/lib/arm64/librefocus_mibokeh.so
-system/priv-app/MiuiExtraPhoto/lib/arm64/libselection.so
+system/lib64/libdoc_photo.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libdoc_photo.so;FIX_SONAME
+system/lib64/libdoc_photo_c++_shared.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libdoc_photo_c++_shared.so;FIX_SONAME
+system/lib64/libgallery_arcsoft_dualcam_refocus.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libgallery_arcsoft_dualcam_refocus.so;FIX_SONAME
+system/lib64/libgallery_arcsoft_portrait_lighting.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libgallery_arcsoft_portrait_lighting.so;FIX_SONAME
+system/lib64/libgallery_arcsoft_portrait_lighting_c.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libgallery_arcsoft_portrait_lighting_c.so;FIX_SONAME
+system/lib64/libgallery_mpbase.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libgallery_mpbase.so;FIX_SONAME
+system/lib64/libmibokeh_gallery.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libmibokeh_gallery.so
+system/lib64/librefocus.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/librefocus.so;DISABLE_DEPS
+system/lib64/librefocus_mibokeh.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/librefocus_mibokeh.so
 
 # Vendor configs - from SPES MIUI
 vendor/etc/camera/102_SummerDay.png|e27c1ad14c763cbc0159aa5a0357b934cbc16ced
