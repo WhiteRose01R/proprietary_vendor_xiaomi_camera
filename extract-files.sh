@@ -1,8 +1,7 @@
 #!/bin/bash
 #
-# Copyright (C) 2016 The CyanogenMod Project
-# Copyright (C) 2017-2020 The LineageOS Project
-#
+# SPDX-FileCopyrightText: 2016 The CyanogenMod Project
+# SPDX-FileCopyrightText: 2017-2024 The LineageOS Project
 # SPDX-License-Identifier: Apache-2.0
 #
 
@@ -56,12 +55,15 @@ fi
 function blob_fixup() {
     case "${1}" in
         system/lib64/libgui-xiaomi.so)
+            [ "$2" = "" ] && return 0
             patchelf --set-soname libgui-xiaomi.so "${2}"
             ;;
         system/lib64/libcamera_algoup_jni.xiaomi.so|system/lib64/libcamera_mianode_jni.xiaomi.so)
+            [ "$2" = "" ] && return 0
             patchelf --replace-needed libgui.so libgui-xiaomi.so "${2}"
             ;;
         system/priv-app/MiuiCamera/MiuiCamera.apk)
+            [ "$2" = "" ] && return 0
             tmp_dir="${EXTRACT_TMP_DIR}/MiuiCamera"
             $APKTOOL d -q "$2" -o "$tmp_dir" -f
             echo "    - Patching apk..."
@@ -74,7 +76,16 @@ function blob_fixup() {
             rm -rf "$tmp_dir"
             split --bytes=20M -d "$2" "$2".part
             ;;
+       *)
+            return 1
+            ;;
     esac
+
+     return 0
+}
+
+function blob_fixup_dry() {
+    blob_fixup "$1" ""
 }
 
 # Initialize the helper
